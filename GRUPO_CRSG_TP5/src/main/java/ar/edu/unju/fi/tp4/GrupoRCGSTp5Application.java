@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GrupoRCGSTp5Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GrupoRCGSTp5ApplicationTests.class, args);
+		SpringApplication.run(GrupoRCGSTp5Application.class, args);
 	}
 
 }
