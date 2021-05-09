@@ -18,16 +18,15 @@ public class CompraServiceImp implements ICompraService{
 	public void generarTablaCompra() {
 		// TODO Auto-generated method stub
 
-		//compras = TablaCompras.listaCompras;
-		//compras.add(new Compra(1,new Producto(5,"Samsung J5",10000,"Samsung",10 ),5,50000));
+		compras = TablaCompras.listaCompras;
+		compras.add(new Compra(1,new Producto(5,"Samsung J5",10000,"Samsung",10 ),5,50000));
 
 	}
 
 	//agregar Compra
 	@Override
-	public void guardarCompra() {
+	public void guardarCompra(Compra compra) {
 		// TODO Auto-generated method stub
-		/*
 		if(compras == null) {
 			generarTablaLCompra();
 		}
@@ -36,10 +35,8 @@ public class CompraServiceImp implements ICompraService{
 		LOGGER.info("SERVICE: CompraServiceImp");
 		LOGGER.info("METHOD: guardarCompra - se agregó un objeto compra en la lista -> " + compras.get(compras.size()-1));
 
-		*/
 	}
 
-	/*
 	 
 	 @Override
 	public List<Compra> obtenerCompras() {
@@ -48,7 +45,6 @@ public class CompraServiceImp implements ICompraService{
 		return compras;
 	}
 	 
-	 */
 
 
 }
