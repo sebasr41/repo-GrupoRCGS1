@@ -1,6 +1,5 @@
 package ar.edu.unju.fi.tp4.service.imp;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -9,29 +8,40 @@ import org.springframework.stereotype.Service;
 
 import ar.edu.unju.fi.tp4.model.Producto;
 import ar.edu.unju.fi.tp4.service.IProductoService;
+import ar.edu.unju.fi.tp4.util.TablaProducto;
 
 @Service
 public class ProductoServiceImp implements IProductoService {
 
+	private List<Producto> productos; 
 
     private static final Log LOGGER = LogFactory.getLog(ProductoServiceImp.class);
 
-    private List<Producto> productosList = new ArrayList<Producto>();
-
     @Override
     public void addProducto(Producto producto) {
-        productosList.add(producto);
+        TablaProducto.listaProductos.add(producto);
         LOGGER.info("SERVICE: IProductoService -> ProductoServiceImp");
-        LOGGER.info("METHOD: addProducto - se agregó un objeto producto en la lista -> "+productosList.get(productosList.size()-1));
+        LOGGER.info("METHOD: addProducto - se agregó un objeto producto en la lista -> "+TablaProducto.listaProductos.get(TablaProducto.listaProductos.size()-1));
         LOGGER.info("RESULT: a object producto");
     }
     
     @Override
-    public Producto showLastProducto() {
-        int indiceLastProduct = productosList.size()-1;
-        Producto producto = productosList.get(indiceLastProduct);
-        return producto;
+    public List<Producto> showLastProducto() {
+    	
+    	LOGGER.info("SERVICE: IProductoService -> ProductoServiceImp");
+		LOGGER.info("METHOD showLastProducto : muestra la LISTA PRODUCTOS "+ TablaProducto.listaProductos);
+		
+        return productos;
     }
+
+	@Override
+	public void generarTablaLProducto() {
+		// TODO Auto-generated method stub
+		productos = TablaProducto.listaProductos;
+		LOGGER.info("SERVICE: IProductoService -> ProductoServiceImp");
+		LOGGER.info("METHOD generarTablaProducto() : genera la tabla producto ");
+		
+	}
 
     
 
