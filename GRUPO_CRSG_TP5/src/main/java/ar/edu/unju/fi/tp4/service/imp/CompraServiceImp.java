@@ -12,7 +12,7 @@ import ar.edu.unju.fi.tp4.service.ICompraService;
 public class CompraServiceImp implements ICompraService{
 	
 	private static final Log LOGGER = LogFactory.getLog(CompraServiceImp.class);
-	//private List<Compra> compras;
+	private List<Compra> compras;
 
 	@Override
 	public void generarTablaCompra() {
