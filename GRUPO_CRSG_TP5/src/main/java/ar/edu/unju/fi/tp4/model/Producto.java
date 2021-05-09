@@ -60,6 +60,14 @@ public class Producto {
 		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", marca=" + marca
 				+ ", stock=" + stock + "]";
 	}
+	public Producto(int codigo, String nombre, double precio, String marca, int stock) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.marca = marca;
+		this.stock = stock;
+	}
 	
 	
 	
