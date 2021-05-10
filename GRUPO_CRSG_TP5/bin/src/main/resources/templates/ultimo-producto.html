@@ -29,12 +29,12 @@
 			      </tr>
 			    </thead>
 			    <tbody>
-			      <tr th:each="pro : ${productos}">
-			        <td><span th:text="${pro.nombre}"></span></td>			        			        
-			        <td><span th:text="${pro.precio}" ></span> </td>
-			        <td><span th:text="${pro.codigo}" ></span> </td>
-			        <td><span th:text="${pro.marca}" ></span> </td>
-			        <td><span th:text="${pro.stock}" ></span> </td>
+			      <tr>
+			        <td><span th:text="${producto.nombre}"></span></td>			        			        
+			        <td><span th:text="${producto.precio}" ></span> </td>
+			        <td><span th:text="${producto.codigo}" ></span> </td>
+			        <td><span th:text="${producto.marca}" ></span> </td>
+			        <td><span th:text="${producto.stock}" ></span> </td>
 			      </tr>
 			    </tbody>
 			    </table>
