@@ -31,10 +31,13 @@ public class ProductoController {
 	}
 	@GetMapping("/producto-ultimo")
 	public ModelAndView showLastProductPage(){
-		
 		ModelAndView model = new ModelAndView("ultimo-producto");
-		model.addObject("producto", productoService.showLastProducto());
+		if(productoService.showLastProducto() == null) {
+			productoService.generarTablaLProducto();
+		}
+		model.addObject("productos",productoService.showLastProducto());
 		
+
 		return model;
 	}
 	
