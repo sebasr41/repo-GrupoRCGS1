@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import ar.edu.unju.fi.tp4.model.Compra;
 import ar.edu.unju.fi.tp4.model.Producto;
 import ar.edu.unju.fi.tp4.service.ICompraService;
+import ar.edu.unju.fi.tp4.util.TablaCompra;
 import ar.edu.unju.fi.tp4.util.TablaProducto;
 
 @Service
@@ -21,7 +22,7 @@ public class CompraServiceImp implements ICompraService{
 	public void generarTablaCompra() {
 		// TODO Auto-generated method stub
 
-		compras = TablaCompras.listaCompras;
+		compras = TablaCompra.listaCompras;
 		compras.add(new Compra(1,new Producto(5,"Samsung J5",10000,"Samsung",10 ),5,50000));
 
 	}
