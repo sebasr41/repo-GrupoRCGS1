@@ -39,7 +39,7 @@ public class ProductoController {
 	
 	@GetMapping("/producto-ultimo")
 	public ModelAndView getProductosPage(){		
-		ModelAndView model = new ModelAndView("productos");
+		ModelAndView model = new ModelAndView("ultimo-producto");
 		
 		if(productoService.obtenerProductos() == null) {
 			productoService.generarTablaProducto();
