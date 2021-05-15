@@ -8,7 +8,7 @@
     <link th:rel="stylesheet" th:href="@{css/styles.css}">
     <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
     <link rel="shortcut icon" href="img/favicon.png"/>
-    <title>tp4-Programación Visual</title>
+    <title>tp5-Programación Visual</title>
 </head>
 <body>
   <div class="container">
@@ -27,7 +27,7 @@
     <div class="row my-3">
       <div class="col-12 col-sm-12 col-md-8 mb-3">
       	<div class="row d-flex justify-content-around">
-	        <div class="col-12 col-sm-5 col-md-5 card">
+	        <div class="col-12 col-sm-4 col-md-4 card">
 	          <img th:src="@{/img/online-register-client.jpg}" class="card-img-top" alt="register-client">
 	          <div class="card-body">
 	            <h5 class="card-title">Cliente</h5>
@@ -36,12 +36,21 @@
 	          </div>
 	        </div>
 	        
-	          <div class="col-12 col-sm-5 col-md5 card">
+	          <div class="col-12 col-sm-4 col-md-4 card">
 	          <img th:src="@{/img/register-product.jpg}" class="card-img-top" alt="register-product">
 	          <div class="card-body">
 	            <h5 class="card-title">Producto</h5>
 	            <p class="card-text">Rellene el formulario para agregar un producto a su lista.</p>
 	            <a th:href="@{/producto}" class="btn btn-primary">Agregar producto</a>
+	          </div>
+	        </div>
+	        
+	        <div class="col-12 col-sm-4 col-md-4 card">
+	          <img th:src="@{/img/buy-product.jpg}" class="card-img-top" alt="buy-product">
+	          <div class="card-body">
+	            <h5 class="card-title">Compra</h5>
+	            <p class="card-text">Rellene el formulario para agregar una compra a su lista.</p>
+	            <a th:href="@{/compra}" class="btn btn-primary">Agregar compra</a>
 	          </div>
 	        </div>
       	
