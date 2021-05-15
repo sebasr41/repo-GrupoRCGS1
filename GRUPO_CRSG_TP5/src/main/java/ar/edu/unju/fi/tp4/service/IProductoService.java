@@ -5,10 +5,13 @@ import java.util.List;
 import ar.edu.unju.fi.tp4.model.Producto;
 
 public interface IProductoService {
-    public void addProducto(Producto producto);
+	
+    public void guardarProducto(Producto producto);
 
-    public List<Producto> showLastProducto();
+    public void generarTablaProducto();
     
-    public void generarTablaLProducto();
+    public List<Producto> obtenerProductos();
+    
+    public Producto getProductoPorCodigo(int codigo);
 
 }

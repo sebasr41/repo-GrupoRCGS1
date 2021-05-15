@@ -28,19 +28,19 @@
 			        <th>P. Marca.</th>
 			        <th>P. Stock</th>
 			        <th>Cantidad</th>
-			        <th>Total</th>
+			        <th>Total</th>			        
 			      </tr>
 			    </thead>
 			    <tbody>
-			      <tr th:each="comp : ${compras}">
+			      <tr th:each="comp : ${compra}">
                         <td th:text="${comp.id}"></td>
                         <td th:text="${comp.producto.codigo}"></td>
                         <td th:text="${comp.producto.nombre}"></td>
-                        <td th:text="${comp.producto.precio}"></td>
+                        <td th:text=" '$ ' + ${comp.producto.precio}"></td>
                         <td th:text="${comp.producto.marca}"></td>
                         <td th:text="${comp.producto.stock}"></td>
                         <td th:text="${comp.cantidad}"></td>
-                        <td th:text="${comp.getTotal}"></td>                        
+                        <td th:text=" '$ ' + ${comp.getTotal}"></td>                                                
                     </tr>
 			    </tbody>
 			    </table>

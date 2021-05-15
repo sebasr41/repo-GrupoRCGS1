@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.tp4.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,12 @@ import ar.edu.unju.fi.tp4.service.IProductoService;
 @Controller
 public class ProductoController {
 	@Autowired
+	private Producto producto;
+	
+	@Autowired
+	@Qualifier("productoUtilService")
 	private IProductoService productoService;
 
-	@Autowired
-	private Producto producto;
 	
 	@GetMapping("/producto")
 	public String getProductoPage(Model model) {
@@ -25,19 +28,25 @@ public class ProductoController {
 		return "nuevo-producto";
 	}
 	@PostMapping("/producto-guardar")
-	public String addProductoPage(@ModelAttribute("producto") Producto producto){
-		productoService.addProducto(producto);
-		return "resultado-producto";
-	}
-	@GetMapping("/producto-ultimo")
-	public ModelAndView showLastProductPage(){
-		ModelAndView model = new ModelAndView("ultimo-producto");
-		if(productoService.showLastProducto() == null) {
-			productoService.generarTablaLProducto();
-		}
-		model.addObject("productos",productoService.showLastProducto());
+	public ModelAndView guardarProductoPage(@ModelAttribute("producto") Producto producto){
 		
-
+		ModelAndView model = new ModelAndView("resultado-producto");
+		productoService.guardarProducto(producto);
+		model.addObject("productos", productoService.obtenerProductos());
+		
+		return model;
+	}
+	
+	@GetMapping("/producto-ultimo")
+	public ModelAndView getProductosPage(){		
+		ModelAndView model = new ModelAndView("productos");
+		
+		if(productoService.obtenerProductos() == null) {
+			productoService.generarTablaProducto();
+		}
+		
+		model.addObject("productos", productoService.obtenerProductos());
+		
 		return model;
 	}
 	

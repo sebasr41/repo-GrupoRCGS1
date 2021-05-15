@@ -8,7 +8,7 @@
     <link th:rel="stylesheet" th:href="@{css/styles.css}">
     <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
     <link rel="shortcut icon" href="img/favicon.png"/>
-    <title>Nuevo Compra</title>
+    <title>Compras</title>
 </head>
 <body>
 	<div class="container">
@@ -17,7 +17,7 @@
   		<div class="row my-3">
   		<div class="col-12 col-sm-12 col-md-8 mb-3">
   			<h2 class="h2 pb-3">Compra</h2>
-            <form th:action="@{/compra-guardar}" th:method="POST" th:object="${compra}">            	
+            <form th:action="@{/compra-guardar}" method="POST" th:object="${compra}">            	
             	
             	<div class="form-group">
 	                <label for="id">Id</label>
@@ -25,9 +25,14 @@
         		</div>
         		
         		<div class="form-group">
-	                <label for="cod">Codigo Producto</label>
-	                <input class="form-control" type="number" id="cod" th:field="*{producto.codigo}">
-        		</div>
+	                <label for="producto">Nombre del Producto</label>
+	                <select id="producto" th:field="*{producto.codigo}" class="form-control form-control-sm">
+	                <option th:each="prod : ${productos}"
+	                 th:value="${prod.codigo}"
+	                 th:text="${prod.nombre}"	                
+	                 th:selected="false"/>
+	                </select>
+        		</div>                              
                 
         		<div class="form-group">
 	                <label for="cantidad">Cantidad</label>

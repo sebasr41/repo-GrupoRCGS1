@@ -15,13 +15,6 @@ public class Producto {
 		// TODO Auto-generated constructor stub
 	}
 	
-	/**
-	 * @param codigo
-	 * @param nombre
-	 * @param precio
-	 * @param marca
-	 * @param stock
-	 */
 	public Producto(int codigo, String nombre, double precio, String marca, int stock) {
 		super();
 		this.codigo = codigo;
@@ -30,6 +23,8 @@ public class Producto {
 		this.marca = marca;
 		this.stock = stock;
 	}
+
+
 
 	// Setters and getters
 	public int getCodigo() {
